@@ -1,0 +1,23 @@
+ <h1>hello world</h1>
+ {% schema %}
+{
+  "name": "custom Section",
+  "settings": [],
+  "presets":[{"name": "default custom section"}]
+}
+{% endschema %}
+
+<!--<div class="custom-section">
+  <h2>{{ section.settings.heading }}</h2>
+  {% if section.settings.image %}
+    <img src="{{ section.settings.image | img_url: 'large' }}" alt="Banner">
+  {% endif %}
+</div>
+
+<style>
+  .custom-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+</style>

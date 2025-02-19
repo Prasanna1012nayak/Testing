@@ -1,0 +1,61 @@
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+  }
+  
+
+</style>
+<div class="container">
+    <div class="wrapper">
+        {% for block in section.blocks %}
+            {{ block.settings.text }}
+            {{ block.settings.rich_text }}
+            {{ block.settings.button-text }}
+            {{ block.settings.image1 }}
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "New Layout",
+  "settings": [
+    
+  ],
+  "blocks": [
+    {
+        "name": "Slide",
+        "type": "slide",
+        "settings": [
+            {
+                "type": "text",
+                "id": "text",
+                "label": "text content"
+              },
+              {
+                "type": "richtext",
+                "id": "rich_text",
+                "label": "rich text content"
+              },
+              {
+                "type": "text",
+                "id": "button-text",
+                "label": "Button Text"
+              },
+              {
+                "type": "image_picker",
+                "id": "image1",
+                "label":"image"
+              }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Layout"
+    }
+  ]
+}
+{% endschema %}

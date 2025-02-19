@@ -1,0 +1,23 @@
+{% assign number1 = 60 %}
+{% assign number2 = 12 %}
+<h5>Addition {{ number1 |plus: number2 }}</h5>
+<h5>Subtraction{{ number1 |minus: number2 }}</h5>
+<h5>Multiplication {{ number1 |times: number2 }}</h5>
+<h5>Division {{ number2 |divided_by:number1 }}</h5>
+{% if number2 == number1 %}
+  {{ number2 }} is smaller one
+  {% else %}
+  <h1> values are not equal to each other</h1>
+  {% endif %}
+  {%  assign bakeryItem= "cake" %}
+  
+    {% case bakeryItem %}
+          {% when "cake" %}
+  <h2>This is cake</h2>
+     {% when "cookies" %}
+  <h5>This is cookies</h5>
+       {% when "Biscuits" %}
+  <h5>This is cookies</h5>
+      {% else %}
+      <h3>wrong input</h3>
+  {% endcase %}

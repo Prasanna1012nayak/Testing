@@ -1,0 +1,130 @@
+<style>
+  .container {
+    position: relative;
+    overflow:hidden;
+  }
+  .text_container {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    padding : 24px 16px 24px 16px;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap:20px
+  }
+
+  h1 {
+     margin: 0;
+    font-family:arial;
+    font-weight: 400;
+    font-size: 44.8px;
+    line-height: 52.2px;
+    letter-spacing: 0%;
+  }
+
+  .custom_button{
+    width:fit-content;
+    padding: 12px 60px 12px 60px;
+    border-radius: 25px;
+    background-color: mediumaquamarine;
+    color: beige;
+    border: none;
+    padding right:30px;
+  }
+
+  .mobile-image {
+    display: none;
+  }
+  .desktop-image {
+    display: block;
+  }
+
+
+  @media (max-width: 768px) {
+    .desktop-image {
+      display: none;
+    }
+
+    .mobile-image {
+      display: block;
+    }
+
+    h1 {
+      margin :0;
+      font-family:arial;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 31.2px;
+      letter-spacing: 0%;
+      text-align: center;
+      padding right:5px;
+      padding top :5px;
+      justify content: center;
+      padding top: 0;
+    }
+
+    .text_container{
+      width:100%;
+      padding : 24px 16px 24px 16px;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap:15px;
+    }
+    .custom_button
+    {
+      width:100%;
+    }
+    
+  }
+</style>
+
+<div class="container">
+  <div class= "desktop-image">
+    {% render 'shopify-responsive-image', image: section.settings.desktop_image, contain: true, aspect_ratio: 2.5 %}
+  </div>
+  <div class= "mobile-image">
+    {% render 'shopify-responsive-image', image: section.settings.mobile_image, contain: true, aspect_ratio: 1 %}
+  </div>
+  <div class="text_container">
+    <h1>{{ section.settings.rich_text }}</h1>
+    <button class="custom_button">{{ section.settings['button-text'] }}</button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "New Slide",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "rich_text",
+      "label": "rich text content"
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "Button Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop-image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile-image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default Announcement"
+    }
+  ]
+}
+{% endschema %}
