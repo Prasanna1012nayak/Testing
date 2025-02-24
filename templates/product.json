@@ -9,6 +9,12 @@
  */
 {
   "sections": {
+    "block_eHVpen": {
+      "type": "block",
+      "settings": {
+        "rich_text": ""
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -101,6 +107,7 @@
     }
   },
   "order": [
+    "block_eHVpen",
     "main",
     "related-products"
   ]
