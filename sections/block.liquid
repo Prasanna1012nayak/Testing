@@ -1,0 +1,104 @@
+{% comment %}
+  <div class="richtext">{{section.settings.rich_text}}</div>
+  <div class="container">
+      <div class="wrapper">
+        <div class="main-container">
+          {% for block in section.blocks %}
+
+            <div class="block-container">
+
+              <div class="block-image">
+                {% render 'shopify-responsive-image', image: block.settings.image1, contain: true, aspect_ratio: 0.8 %}
+              </div>
+              <div class="text-container">
+                <h6 class="heading">{{ block.settings.text }}</h6>
+                <div class="paragraph">{{ block.settings.rich_text }}</div>
+                <h6 class="heading">{{ block.settings.text1 }}</h6>
+                <button class="button">{{ block.settings.button-text }}</button>
+                <button class="button1"><h4>{{ block.settings.text }}</h4></button>
+
+              </div>
+
+            </div>
+          {% endfor %}
+          </div>
+      </div>
+  </div>
+{% endcomment %}
+{{ 'block.css' | asset_url | stylesheet_tag }}
+
+{% comment %}
+  {% assign collection_handles ="new-Arrival" | split: "," %}
+
+  {% for product in collections['new-Arrival'].products %}
+      {{ product.title }}
+{% endcomment %}
+{% comment %}
+  {% endfor %}
+{% endcomment %}
+{% comment %} {%  if  collection.product.size > 0 %} {% endcomment %}
+<div class="product-details">
+  {% for product in collections['Our-Bestselling-Products'].products %}
+    <div class="product-info">
+      <a href="{{ product.url }}"
+        ><img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}"
+      ></a>
+      <div class="text-container">
+        <h2>{{ product.variants[0].title }}</h2>
+        <p>By {{ product.vendor }}</p>
+        <a href="/checkout"> buy Now {{ product.price | money }}</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% comment %} {% endif %} {% endcomment %}
+{% schema %}
+{
+  "name": "New block",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "rich_text",
+      "label": "richText"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "text content"
+        },
+        {
+          "type": "richtext",
+          "id": "rich_text",
+          "label": "rich text content"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "text content1"
+        },
+        {
+          "type": "text",
+          "id": "button-text",
+          "label": "Button Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "New block"
+    }
+  ]
+}
+{% endschema %}

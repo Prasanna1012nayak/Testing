@@ -1,29 +1,40 @@
-<style>
-  .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 30px;
-  }
-  
-
-</style>
-<h1>Hello world</h1>
-<h2>new world</h2>
+{{ 'custom.css' | asset_url | stylesheet_tag }}
+<div class="richtext">{{section.settings.rich_text}}</div>
 <div class="container">
     <div class="wrapper">
+      <div class="main-container">
         {% for block in section.blocks %}
-            {{ block.settings.text }}
-            {{ block.settings.rich_text }}
-            {{ block.settings.button-text }}
-            {{ block.settings.image1 }}
+          
+          <div class="block-container">
+            
+            <div class="block-image">
+              {% render 'shopify-responsive-image', image: block.settings.image1, contain: true, aspect_ratio: 0.8 %}
+            </div>
+            <div class="text-container">
+              <h6 class="heading">{{ block.settings.text }}</h6>
+              <div class="paragraph">{{ block.settings.rich_text }}</div> 
+              <button class="button">{{ block.settings.button-text }}</button>
+              <button class="button1"><h4>{{ block.settings.text }}</h4></button>
+              
+            </div>
+           
+          </div>
         {% endfor %}
+        </div>
     </div>
 </div>
+
+
 
 {% schema %}
 {
   "name": "New Layout",
   "settings": [
+    {
+      "type": "richtext",
+      "id": "rich_text",
+      "label": "richText"
+    },
     
   ],
   "blocks": [

@@ -1,0 +1,30 @@
+{{ 'collection.css' |asset_url | stylesheet_tag  }}
+{% assign collection_handles ="new-Arrival,nike,Shoes" | split: "," %}
+<div class="container">
+ <div class="item-container">
+    {% for collection in collections %}
+      <div class="text-container">
+      <div class=""><a href="{{ collection.url }}">{% render 'shopify-responsive-image', image: collection.image, contain: true, aspect_ratio: 1 %} </div>
+       <div class="url-container" > <a href="{{ collection.url }}">{{ collection.title }}</a></div>
+      </div>
+    {% endfor %}
+</div> 
+</div>
+  
+  
+
+{% schema %}
+{
+    "name": "New Collection",
+    "settings": [] ,
+    
+    "blocks": [] ,
+    "presets": [
+        {
+            "name": " new Collection",
+            "category": "Collection",
+            "settings": {}
+        }
+    ]
+}
+{% endschema %}
