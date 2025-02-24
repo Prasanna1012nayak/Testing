@@ -46,7 +46,9 @@
       <div class="text-container">
         <h2>{{ product.variants[0].title }}</h2>
         <p>By {{ product.vendor }}</p>
+    <form>
         <a href="/checkout"> buy Now {{ product.price | money }}</a>
+        </form>
       </div>
     </div>
   {% endfor %}
