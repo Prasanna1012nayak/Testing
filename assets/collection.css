@@ -1,0 +1,21 @@
+.item-container{
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px;
+}
+
+.image{
+   aspect-ratio: 1;  
+}
+.text-container
+{
+   margin: 0;
+
+}
+.url-container a
+{
+    padding: 0;
+    text-align: center;
+    text-decoration:none;
+}

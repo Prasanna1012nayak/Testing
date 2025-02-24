@@ -40,6 +40,7 @@
         "template--18521947767080__07c5541b-f8e9-4e48-9d3c-06973d977a3a-1681309838ff78aa4b-0",
         "template--18521947767080__07c5541b-f8e9-4e48-9d3c-06973d977a3a-1681309838ff78aa4b-1"
       ],
+      "disabled": true,
       "settings": {
         "title": "Collections",
         "heading_size": "h1",
@@ -52,10 +53,15 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collection_list1_8YbJiG": {
+      "type": "collection-list1",
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "07c5541b-f8e9-4e48-9d3c-06973d977a3a"
+    "07c5541b-f8e9-4e48-9d3c-06973d977a3a",
+    "collection_list1_8YbJiG"
   ]
 }

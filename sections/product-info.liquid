@@ -1,0 +1,24 @@
+<div class="product-details">
+    <img src="{{product.featured_image | img_url:'medium'}}" alt="{{ product.title }}">
+    <div class="product-info">
+        <h2 class="product-title">{{ product.title }}</h2>
+        <p class="product-description">{{ product.description }}</p>
+        <p class="prodct-price">{{ product.price|money }}</p>
+        </div>
+</div>
+
+{% schema %}
+  {
+    "name":"product-details", 
+    "settings": [],
+
+    "presets": [
+        {
+          "name":"product-details"
+        }
+    
+    ]
+
+
+  }
+  {% endschema %}

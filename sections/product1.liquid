@@ -1,0 +1,31 @@
+{% if collection.products.size > 0 %}
+    <div class="product-grid">
+      {% for product in collection.products %}
+        <div class="product-item">
+          <h2>{{ product.title }}</h2>
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+          <p>{{ product.price | money }}</p>
+          <a href="{{ product.url }}">View Product</a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No products found in this collection.</p>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name":"new-product-grid",
+    "settings": [],
+
+    "presets": [
+        {
+          "name":"my-product-grid"
+        }
+    
+    ]
+
+
+  }
+  {% endschema %}
+  
