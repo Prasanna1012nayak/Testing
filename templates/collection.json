@@ -39,6 +39,7 @@
     },
     "block_iGAXEE": {
       "type": "block",
+      "disabled": true,
       "settings": {
         "rich_text": ""
       }

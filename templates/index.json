@@ -433,11 +433,14 @@
     },
     "annocument_bar1_9cP96T": {
       "type": "annocument-bar1",
+      "disabled": true,
       "settings": {}
     },
     "slidshow1_qTniQ7": {
       "type": "slidshow1",
+      "disabled": true,
       "settings": {
+        "rich_text": "",
         "button-text": ""
       }
     }
